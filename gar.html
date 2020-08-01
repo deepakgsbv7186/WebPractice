@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="style.css">
+	<script>
+		var objPeople = [
+							{	username: "admin",
+								password: "password"
+							},
+							{
+								username: "email@gamil.com",
+								password: "password"
+							}
+						]
+		var userlog = localStorage.getItem("u");
+		var passlog = localStorage.getItem("p");
+
+		function getuser(){
+			var username=document.getElementById("username").value;
+			sessionStorage.clear();
+			sessionStorage.setItem("un",username);
+			return false;
+		}
+
+		function validate(){
+
+				var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+				var user= document.getElementById("username").value;
+				var pass= document.getElementById("password").value;
+				if(!document.mylogin.user.value.match(mail)){
+				alert("Please Enter Valid Email-ID")
+				return false;
+				}				
+	 
+				if(userlog!=user||passlog!=pass){
+					alert("UserName or Password not correct!!!");
+					return;
+				}
+				else{
+					for(i=0;i<objPeople.length;i++){
+					if(user== objPeople[i].username && pass == objPeople[i].password){
+						window.location = 'indexL.html';
+						console.log(user + " is logged in !!!");
+						return;
+					}
+				}
+			}
+			window.location = 'indexL.html';
+			console.log("successful login");
+
+		}
+	</script>
+</head>
+	<body>
+		<header id="grading">
+		<div class="container">
+			<div class="wrapper">
+				<div id="left_logo">
+					<a href="index.html"><img src="image/logo2.png" alt="logo"/></a>
+				</div>
+				<div id="nav_bar">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="facts.html">FACTS</a></li>
+						<li class="active"><a href="login.html">LOGIN</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+
+					</ul>
+				</div>
+				
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+
+
+	<div id="login">
+		<div class="wrapper">
+			
+			<form name="mylogin" onsubmit="return validate();" action="indexL.html">
+				<h1>Hero Login</h1>
+				<label for="user">Email-ID</label>
+				<input type="text" name="user" id="username" placeholder="email@xyz.com" autocomplete="off" required/>
+				<label for="pass">Password</label>
+				<input type="password" name="pass" id="password" placeholder="password" required/>
+				<br>
+				<input type="submit" id="btn" value="Login" onclick="getuser();" />
+				<!-- <input type="reset" id="btn" value="Reset"/> -->
+				<p>Didn't have an <a href="register.html">account</a> ?</p>
+			</form>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	
+	<div id="banner">
+		
+		<div class="wrapper">
+			<h2>@ppy &copy 2019</h2>
+				<div class="clear"></div>
+		</div>
+	</div>
+
+	</body>
+</html>

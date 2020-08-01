@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+.backImg{
+	width: 100%;
+	height: 100vh;
+	/*background-color: tomato;*/
+	background-image: url('wall.jpg');
+	background-size: 100% 100%;
+	background-attachment: 	fixed; /* this use for parallax website */
+
+}
+.backImg1{
+	width: 100%;
+	height: 100vh;
+	/*background-color: tomato;*/
+	background-image: url('avengers.jpg');
+	background-size: 100% 100%;
+	background-attachment: 	fixed;
+
+}
+#fontcss{
+	font-family: sans-serif; /* use of google font from website */
+	font-variant: small-caps; /* font style */
+	font-size: 1em;  /* 1em=16px*/
+	font-weight: bold; /* Range 100 to 900 */
+}
+
+#textcss{
+	font-family: sans-serif;
+	color: red; /* represent font color */
+	letter-spacing: 2px; /* spacing between characters */
+	word-spacing: 5px; /* spacing between words */
+	direction: ltr; /* provides direstion form left-to-right "ltr" and right-to-left "rtl" */
+	text-indent: 15px; /* as letter first line having the indent space */
+	text-align: center; /* center right left */ 
+	text-transform: uppercase; /* uppercase lowercase toggle */
+}

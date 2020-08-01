@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Garbage Calculation</title>
+		<script src="garbage.js"></script>
+		<link rel="stylesheet" href="garbage.css">
+	</head>
+	
+	<body>
+	<header><h1>Garbage Pickup Form</h1></header>
+	<div class="garbageform">
+		<form id="garbage">
+			<label class="del">Type of Garbage</label>
+			<input type="radio" name="type" value="home" />Home
+			<input type="radio" name="type" value="shop" />Shop
+			<br><br>
+			
+			<label class="del">Condition</label>
+			<select name="cond" id="cond">
+				<option value="dry">Dry</option>
+				<option value="wet">Wet</option>
+				<option value="elec">Electronic</option>
+			</select>
+			<br><br>
+			<label class="del">Weight</label>
+				<input type="text" id="weight">
+				<br><br>
+				
+				<label class="del">Description</label>
+				<input type="textarea" placeholder="about garbage">
+				<br><br>
+				
+				<br><br><br><br>
+				<input type="reset" value="Reset">
+				<input type="button" id="ca" value="Calculate" onclick="cal();">
+				<input type="button" id="pick" value="Pickup">
+				<br><br>
+				<label class="del">Charges</label>
+				<h1 id="sum"></h1>
+			</form>
+		</div>
+	</body>
+</html>

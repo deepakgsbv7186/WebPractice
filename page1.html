@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>page1</title>
+	<script type="text/javascript">
+
+		function disp(){
+			localStorage.clear();
+			localStorage.setItem("you",document.getElementById("name").value);
+			localStorage.setItem("your",document.getElementById("age").value);	
+			return false;	
+		}
+	</script>
+</head>
+<body>
+	<form action="page2.html">
+	Name:<input type="text" id="name"/>
+	Age:<input type="text" id="age"/>
+	<button id="submit" onclick="disp()">Display on Page2</button>
+</form>
+</body>
+</html>

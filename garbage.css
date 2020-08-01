@@ -1,0 +1,28 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to right,red,blue);
+}
+
+header{
+	font-family: sans-serif;
+	font-size: 2em;
+	font-weight: 600;
+}
+
+#sum{
+	test-align: center;
+	font-size: 4em;
+}
+
+div form label{
+	font-size: 2em;
+	font-family: serif;
+	font-weight: 500;
+	top: 20%;
+	left: 50%;
+}
+div form input{
+	font-size: 2em;
+}
+

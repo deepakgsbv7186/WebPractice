@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<title>Coffee Shop</title>
+		<script type="text/javascript">
+
+			// array creaation for coffee elements, direct assignment of values 
+			var coffee=new Array();
+			coffee["raw"]=20;
+			coffee["hot"]=50;
+			coffee["cold"]=30;
+
+			// array creation for pizza elements, for loop used in radio buttons
+			var pizza=new Array()
+			pizza["pizza1"]=100;
+			pizza["pizza2"]=200;
+			pizza["pizza3"]=300;
+			pizza["pizza4"]=400;
+			function billtotal()
+			{
+				// Declaration of Variable
+				var price=0,piz=0,pk=0,soft=0,so=0;
+
+				// include the form id="coff"
+				var theForm = document.forms["coff"];
+
+				// create object of form named as selectedCoffee having id="shop" in select options
+				var selectedCoffee = theForm.elements["shop"];
+				// coffee index returned by selctedCoffee.value and multiply by it quantity
+				price = coffee[selectedCoffee.value]*Number(document.getElementById("quant1").value);
+				
+				// create object of form named as selectedPizza having name="p" in radio buttons
+				var selectedPizza= theForm.elements["p"];
+				// calculate pizza price by selected radio button and multiply by quantity
+				for(i=0;i<selectedPizza.length;i++)
+				{
+					if(selectedPizza[i].checked)
+					{
+						piz=pizza[selectedPizza[i].value]*Number(document.getElementById("quant2").value);
+						break;
+					}
+				}
+
+				// object of form having id="pkg" and setting the variable pk=20
+				var selectedPack= theForm.elements["pkg"];
+				if(pkg.checked==true)
+				{
+					pk=20;
+				}
+
+				// object of form having id="coke" and setting the variable soft=80
+				var selectedCoke= theForm.elements["coke"];
+				if(coke.checked==true)
+				{
+					soft=80;
+				}
+
+				// object of form having id="chk" and setting the variable so=0
+				var selectedSoS= theForm.elements["chk"];
+				if(chk.ckecked==true)
+				{
+					so=0;
+				}
+
+				// addition of all the values get from above statements
+				price=price+piz+pk+soft+so;
+				
+				// print by innerHTML in the heading h2 tag having id="total"
+				document.getElementById("total").innerHTML="Total Bill: Rs. "+price;
+			}	
+		</script>
+	</head>
+	<body>
+		<center>
+		<form id="coff">
+			<br><br><br>
+			<label>Your coffee:</label>
+			<select name="shop" id="shop">
+				<option value="raw" selected>Raw Coffee Rs.20</option>
+				<option value="hot">HOT Coffee Rs.50</option>
+				<option value="cold">COLD Coffee Rs.30</option>
+			</select><br>
+			<label>Quantity: <input type="text" id="quant1"></label><br><br><br>
+			<label>Main Course Pizzas</label><br><br>
+			<input type="radio" name="p" value="pizza1"/>Capsicum Pizza Rs100<br>
+			<input type="radio" name="p" value="pizza2"/>Onion Pizza Rs200<br>
+			<input type="radio" name="p" value="pizza3"/>Cheese Pizza Rs300<br>
+			<input type="radio" name="p" value="pizza4"/>Mixed Cheese Pizza Rs400<br><br>
+			<label>Quantity: <input type="text" id="quant2"></label><br><br>
+			<label>Additional:</label>
+			<input type="checkbox" id="chk" value="sos"/>Extra SOS Rs 0
+			<input type="checkbox" id="coke" value="coke"/>Softdrink Rs80<br><br>
+			<input type="checkbox" id="pkg" value="pack"/>Packing Charges Rs20<br><br>
+			<input type="button" id="bill" value="BILL" onclick="billtotal()">
+			<h1 id="total"></h1>
+		</form>
+		</center>
+	</body>
+</html>

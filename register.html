@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Register1</title>
+
+	<script>
+		var objPeople = [
+							{	username: "admin",
+								password: "password"
+							},
+							{
+								username: "email@gamil.com",
+								password: "password"
+							}
+						]
+
+		function register(){
+			var ruser = document.getElementById("newUser").value;
+			var rpass = document.getElementById("newPass").value;
+
+			var newRegister = {
+				username: ruser,
+				password: rpass 
+			}
+
+			for(i=0;i<objPeople.length;i++){
+				if(ruser == objPeople[i].username){
+					alert("User Already exists.");
+					return;
+				}
+			}
+
+			objPeople.push(newRegister);
+			localStorage.setItem("u",ruser);
+			localStorage.setItem("p",rpass);
+			console.log(objPeople);
+		}
+
+	</script>
+</head>
+	<body>
+		
+		<form>
+			<h2>Register User</h2>
+			<input type="text" id="newUser" autocomplete="off" />
+			<input type="password" id="newPass" autocomplete="off" />
+			<input type="button" value="register" onclick="register();">
+		</form>
+	</body>
+</html>

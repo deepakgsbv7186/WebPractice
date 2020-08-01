@@ -1,0 +1,245 @@
+/* Before Page Builds */
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica,sans-serif;
+}
+
+body{
+	background-color: #f5f5f5;
+}
+
+.box ul{
+	display: block;
+}
+.box ul li{
+	list-style-type: none;
+}
+
+.box ul li a{
+	color: white;
+	text-decoration: none;
+	padding: 3px;
+}
+
+
+
+/* header */
+
+header{
+	background-size: cover;
+  	min-height:130px;
+  	background: linear-gradient(to right,red,blue);
+}
+
+header a img{
+	width: 170px;
+	height: auto;
+	padding: 20px;
+	float: left;
+}
+
+header nav{
+	float: right;
+	display: inline;
+	padding: 50px;
+}
+header ul li{
+	float: left;
+	padding: 7px;
+	list-style-type: none;
+	position: relative;
+}
+
+header ul li a{
+	font-size: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-color: transparent;
+	color: white;
+	padding: 5px 20px;
+	transition: 0.6s;
+	border-radius: 8px;
+}
+
+header ul li a:hover{
+	background-color: white;
+	color: black;
+}
+
+header ul ul{
+	position: absolute;
+	padding-top: 10px;
+	display: none;
+}
+
+header ul ul a{
+		font-size: 1em;
+}
+
+header ul ul li{
+	display: block;
+	z-index: 10;
+	padding: 4px;
+}
+
+header ul li:hover >ul{
+	display: block;
+
+}
+
+header .active a{
+	background-color: white;
+	color: royalblue;
+	border-radius: 5px;
+}
+
+/* main cover */
+#showcase{
+	background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.6)),url('image/maincover.jpg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	background-position: center;
+	position: relative;
+}
+
+.container1{
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-70%);
+}
+
+.container1 h1{
+	text-align: center;
+	font-size: 3.5em;
+	font-weight: 400;
+	padding-bottom: 50px;
+}
+
+.container1 p{
+	font-weight: 40;
+	font-size: 1.3em;
+} 
+
+
+/* hero section */
+
+#hero{
+	background: linear-gradient(to left,red,blue);
+	height: 80px;
+	color: white;
+	font-size: 1.5em;
+}
+
+#hero .container2 h1{
+	float: left;
+	padding: 18px 0px 0px 100px;
+}
+
+#hero form{
+	float: right;
+	padding: 18px 100px;
+
+}
+
+#hero form input{
+	margin: 5px ;
+	width: 250px;
+	height: 35px;
+	border-radius: 8px;
+	border: none;
+	text-align: center;
+	font-size: 1em;
+}
+
+#hero form #btnhero{
+	padding: 5px;
+	width: 150px;
+	border: none;
+	border-radius: 8px;
+	font-size: 1em;
+}
+
+
+/* article section */
+
+.article{
+	margin-bottom: 20px;
+}
+.article h1{
+	text-align: center;
+	font-size: 3em;
+	padding: 40px;
+
+}
+
+.article img{
+	width: 130px;
+}
+
+
+.container3{
+	height: 40%;
+}
+
+.container3 .box{
+	float: left;
+	width: 45%;
+	text-align: center;
+	padding: 10px;
+	margin-left: 30px;
+}
+
+
+.container4{
+	height: 40%;
+}
+
+.container4 .box{
+	float: right;
+	width: 45%;
+	text-align: center;
+	padding: 10px;
+	margin-right: 30px;
+}
+
+
+/* about us */
+
+aside#sidebar{
+	float: right;
+	width: 30%;
+	margin-top: 10px;
+}
+
+article#main-col{
+	float: left;
+	width: 65%;
+}
+
+/* footer section */
+
+footer{
+	background: linear-gradient(to left,red,blue);
+	color: white;
+	font-size: 1.2em;
+	height: 17%;
+}
+
+.container5{
+	margin-left: 50px;
+}
+
+.container5 .box{
+	float: left;
+	margin: 3px;
+	padding: 20px;
+}
+
+footer .copyright{
+	float: right;
+	padding: 25px 50px;
+}

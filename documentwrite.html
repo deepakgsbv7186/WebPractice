@@ -1,0 +1,12 @@
+<html>
+<body onload="checkscope();">
+	<script>
+		var my="global";
+		function checkscope(){
+			var my="local";
+			confirm(my);
+			document.write(my);
+		}
+	</script>
+</body>
+</html>

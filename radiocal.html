@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Workng with Radio Buttons</title>
+		<script language="JavaScript">
+			function calculate(form)
+			{
+				if(form.elements[2].checked)
+				{
+					form.result.value=form.entry.value*form.entry.value;
+				}
+				else
+				{
+					form.result.value=form.entry.value*2;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<center><br>
+			<b>Value</b>
+			<input type="text" name="entry" value=0>
+			<br><br>
+			<space size=190>
+			<b>Action</b><br>
+			
+			<input type="radio" name="action1" value="twice" onClick="calculate(this.form);">Double<br><br>
+			
+			<input type="radio" name="action1" value="square" onClick="calculate(this.form);">Square<br><br>
+			<b>Result:</b>
+			<input type="text" name="result" onFocus="this.blur();">
+			</center>
+		</form>
+	</body>
+</html>

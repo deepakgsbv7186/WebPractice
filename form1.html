@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Form Test 1 </title>
+	<script type="text/javascript">
+
+function calculate() {
+        var quantity = document.getElementById('qty').value;
+        var price = document.getElementById('prc').value;
+        var total = document.getElementById('ttl');
+        var result = quantity * price;
+        total.value = result;
+	 }
+
+	function multiply()
+	{
+    // Get the input values
+    a = Number(document.getElementById("we").value);
+    b = Number(document.getElementById("are").value);
+
+    // Do the multiplication
+    c = a*b;
+
+    // Set the value of the total
+    document.getElementById("total").innerHTML="TOTAL: "+c;
+	}
+	</script>
+</head>
+<body>
+
+<label id="price">Price</label>
+<input type="button" value="300" id="we" onclick="multiply()"/>
+<input type="button" value="400" id="are" onclick="multiply()"/>
+<br><br>
+<h2 id="total"></h2>
+
+	</body>
+	</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Printing Document</title>
+	<script>
+
+		function checkscope(){
+			var my="Confirm Pickup";
+			confirm(my);
+			// document.write(my);
+		}
+
+		function printcontent(e){
+			var restorepage = document.body.innerHTML;
+			var prints = document.getElementById(e).innerHTML;
+			document.body.innerHTML=prints;
+			window.print();
+			document.body.innerHTML=restorepage;
+		}
+
+	</script>
+</head>
+
+	<body onload="checkscope();">
+		<div id="div1">
+			div 1 paragraph
+		</div>
+		<input type="button" value="Print div1" onclick="printcontent('div1')"/>
+
+		<div id="div2">
+			div 2 paragraph
+		</div>
+		<input type="button" value="Print div2" onclick="printcontent('div2')"/>
+
+		<p id="p1">
+			It is an opportunity for people to raise awareness about environment and give back to the community. 
+				A clean environment can give a better life when you are retiring and it can help your children as well.
+		</p>
+		<input type="button" value="Print p1" onclick="printcontent('p1')"/>
+
+	</body>
+</html>

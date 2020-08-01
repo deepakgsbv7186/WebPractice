@@ -1,0 +1,148 @@
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" href="style.css">
+	<script>
+
+		var objPeople = [
+							{	username: "admin",
+								password: "password"
+							},
+							{
+								username: "email@gamil.com",
+								password: "password"
+							}
+						]
+
+		function validate(){
+
+			var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var n = document.myregister.name.value;
+			var p = /^\d{10}$/;
+			var a = document.myregister.age.value;
+			var pw1 = document.myregister.pass.value;
+			var pw2 = document.myregister.cpass.value;
+				
+				if(!isNaN(n)){
+					alert("Fill Proper Name");
+					return false;
+				}
+
+				if(a==0 || a<5){
+					alert("More than 5 years");
+					return false;
+				}
+				
+				if(!document.myregister.phone.value.match(p)){
+					alert("only 10 digits");
+					return false;
+				}
+
+				if(!document.myregister.email.value.match(mail)){
+				alert("Please Enter Valid Email-ID")
+				return false;
+				}
+				
+
+				if(pw1!=pw2){
+					alert("Password must be Same");
+					return false;
+				}
+
+				confirm("Registration Successfull");
+		}
+
+		function register(){
+			var ruser = document.getElementById("email").value;
+			var rpass = document.getElementById("cpass").value;
+
+			var newRegister = {
+				username: ruser,
+				password: rpass 
+			}
+
+			for(i=0;i<objPeople.length;i++){
+				if(ruser == objPeople[i].username){
+					alert("User Already exists.");
+					return;
+				}
+			}
+
+			objPeople.push(newRegister);
+			localStorage.setItem("u",ruser);
+			localStorage.setItem("p",rpass);
+			console.log(objPeople);
+		}
+
+
+		
+	</script>
+</head>
+	<body>
+		<header id="grading">
+		<div class="container">
+			<div class="wrapper">
+				<div id="left_logo">
+					<a href="index.html"><img src="image/logo2.png" alt="logo"/></a>
+				</div>
+				<div id="nav_bar">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="facts.html">FACTS</a></li>
+						<li class="active"><a href="login.html">REGISTER</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</header>
+
+
+	<div id="register">
+		<div class="wrapper">
+			
+			<form name="myregister" method="post" onsubmit="return validate();">
+				<h1>Registration Act</h1>
+				<table boder="1px">	
+					<tr><label for="name">Name</label></tr>
+					<tr><input type="text" name="name" id="name" placeholder="full name" autocomplete="off"/></tr>
+					<tr><label for="age">Age</label></tr>
+					<tr><input type="number" name="age" id="age" placeholder="above 5 years old" autocomplete="off" /></tr>
+					<tr><label for="gender">Gender</label></tr>
+					<tr>						
+							<select name="gender" id="gender">
+								<option value="male">MALE</option>
+								<option value="femaie">FEMALE</option>
+							</select>				
+					</tr>
+					<tr><label for="phone">Contact</label></tr>
+					<tr><input type="text" name="phone" id="phone" placeholder="+91 XXXXXXXXXX" autocomplete="off" /></tr>
+					<tr><label for="email">Email-ID</label></tr>
+					<tr><input type="email" name="email" id="email" placeholder="email@gmail.com" autocomplete="off" /></tr>
+					<tr><label for="address">Address</label></tr>
+					<tr><input type="textarea" name="address" id="address" placeholder="fill your address" autocomplete="off"/></tr>
+					<tr><label for="pass">Password</label></tr>
+					<tr><input type="password" name="pass" id="pass" placeholder="password" autocomplete="off"/></tr>
+					<tr><label for="cpass">Confirm Password</label></tr>
+					<tr><input type="password" name="cpass" id="cpass" placeholder="password" autocomplete="off"/></tr>
+					<tr><input type="checkbox" id="pledge" required/><p>I pledge to protect envirnoment.</p></tr>
+					<tr><input type="submit" id="btn" value="Create Account" onclick="register();"/></tr>
+					<tr><input type="reset" id="btn" value="Reset"/></tr>
+					<tr><p>Login to <a href="login.html">account</a> ?</p></tr>
+				</table>
+			</form>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<div id="banner">
+		
+		<div class="wrapper">
+			<h2>@ppy &copy 2019</h2>
+				<div class="clear"></div>
+		</div>
+	</div>
+	</body>
+</html>

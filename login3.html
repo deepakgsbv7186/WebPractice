@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Login3</title>
+
+	<script>
+		var objPeople = [
+							{	username: "admin",
+								password: "password"
+							},
+							{
+								username: "email@gmail.com",
+								password: "password"
+							}
+						]
+		var userlog = localStorage.getItem("u");
+		var passlog = localStorage.getItem("p");
+
+		function login(){
+			var user= document.getElementById("username").value;
+			var pass= document.getElementById("password").value;
+
+			for(i=0;i<objPeople.length;i++){
+				if(user== objPeople[i].username && pass == objPeople[i].password){
+					window.location = 'grabage.html';
+					console.log(user + " is logged in !!!");
+					return;
+				}
+			}
+
+			if(userlog!=user||passlog!=pass){
+				alert("UserName or Password not correct!!!");
+				return;
+			}
+			window.location = 'grabage.html';
+			console.log("successful login");
+		}
+	</script>
+</head>
+	<body>
+		<form>
+			<h2>Login User</h2>
+			<input type="text" id="username" autocomplete="off" />
+			<input type="password" id="password" autocomplete="off" />
+			<input type="button" value="login" onclick="login();"/>
+		</form>
+	</body>
+</html>

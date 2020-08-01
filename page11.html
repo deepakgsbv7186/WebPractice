@@ -1,0 +1,91 @@
+<html>
+<head>
+	<script>
+		// function disp(){
+		// 	var fname=document.getElementById("name").value;
+		// 	localStorage.clear();
+		// 	localStorage.setItem("test",fname);
+		// 	return false;
+		// }
+		var ty=new Array();
+		ty["home"]=0;
+		ty["shop"]=1;
+		var con=new Array();
+		con["dry"]=3;
+		con["wet"]=5;
+		con["elec"]=0;
+		con["chem"]=8;
+			var total=0;
+	function cal(){
+
+		
+
+		var theForm = document.forms["garbage"];
+		var selectedType = theForm.elements["type"];
+		var selectedCond = theForm.elements["cond"];
+
+		if(ty[selectedType.value]==0)
+			total = con[selectedCond.value]*Number(document.getElementById("weight").value);
+		else
+			total = 2*con[selectedCond.value]*Number(document.getElementById("weight").value);
+		document.getElementById("sum").innerHTML="Rs. "+total;
+	}
+
+	function disp(){
+			localStorage.clear();
+			localStorage.setItem("test1",document.getElementById("name").value);
+			localStorage.setItem("test2",document.getElementById("address").value);
+			//localStorage.setItem("test3",document.getElementById("#").value);
+			localStorage.setItem("test4",document.getElementById("about").value);
+			localStorage.setItem("test5",document.getElementById("weight").value);
+			localStorage.setItem("test6",total);
+
+			return false;
+		}   
+
+
+	</script>
+</head>
+	<body>
+		<!-- <form action="page22.html">
+			<input type="text" id="name" placeholder="fname" autocomplete="off" />
+			<input type="submit" value="click" onclick="disp();">
+		</form>
+		<br><br> -->
+		<form id="garbage" action="page22.html">
+				<h3>Name</h3>
+				<input type="text" id="name" placeholder="full name" autocomplete="off"/>
+				<br>
+			<label class="del">Type of Garbage</label>
+				<input type="radio" name="type" value="home" />Home
+				<input type="radio" name="type" value="shop" />Shop
+				<br><br>
+				
+				<label class="del">Condition</label>
+				<select name="cond" id="cond">
+					<option value="dry">Dry</option>
+					<option value="wet">Wet</option>
+					<option value="elec">Electronic</option>
+					<option value="chem">Chemical</option>
+				</select>
+				<br><br>
+				<label class="del">Weight</label>
+					<input type="text" id="weight" placeholder="in kilograms" autocomplete="off"/>
+					<br><br>
+					
+					<label class="del">Description</label>
+					<input type="textarea" id="about" placeholder="about garbage">
+					<br><br>
+					
+					<label class="del">Address</label>
+					<input type="textarea" id="address" placeholder="full address" autocomplete="off"/>
+					<br><br>
+					<input type="reset" value="Reset">
+					<input type="button" id="ca" value="Calculate" onclick="cal();"/>
+					<input type="submit" value="Pickup" onclick="disp();"/>
+					<br><br>
+					<label class="del">Charges</label>
+					 <h1 id="sum"></h1>
+				</form>
+	</body>
+</html>

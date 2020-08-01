@@ -1,0 +1,48 @@
+<html>
+<head>
+	
+<script>
+		function checkscope(){
+			var my="Confirm Pickup";
+			confirm(my);
+			// document.write(my);
+		}
+		function printcontent(e){
+			var restorepage = document.body.innerHTML;
+			var prints = document.getElementById(e).innerHTML;
+			document.body.innerHTML=prints;
+			window.print();
+			document.body.innerHTML=restorepage;
+		}
+	</script>
+	</head>
+	<body onload="checkscope();">
+		<div id="service">
+			<div class="wrapper">
+				<h1>Pick Up (Garbage Sevice)</h1>
+			<hr>
+				<h1>Name</h1><span id="ne"></span>
+				<br>
+				<h1>Address</h1><span id="ad"></span>
+				<br>
+				<h1>Description</h1><span id="dd"></span>
+				<br>
+				<h1>Weight</h1><span id="we"></span>
+				<br>
+				<h1>Charge</h1><span id="ch"></span>
+				<hr>
+			</div>
+		</div>
+		<input type="button" value="Print Recipt" onclick="printcontent('service')"/>
+	<script>
+		document.getElementById("ne").innerHTML=localStorage.getItem("test1");
+		document.getElementById("ad").innerHTML=localStorage.getItem("test2");
+		//document.getElementById("#").innerHTML=localStorage.getItem("test3");
+		document.getElementById("dd").innerHTML=localStorage.getItem("test4");
+		document.getElementById("we").innerHTML=localStorage.getItem("test5");
+		document.getElementById("ch").innerHTML=localStorage.getItem("test6");
+
+	</script>
+
+	</body>
+</html>

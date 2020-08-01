@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Water Bill</title>
+	<script>
+		function addRow()
+		{
+			var table=document.getElementsByTagName("table")[0];
+			var newRow=table.insertRow(table.rows.length);
+
+
+			var name=document.getElementById("name").value;
+			var period=document.getElementById("period").value;
+			var reading=document.getElementById("reading").value;
+
+			var cel1=newRow.insertCell(0);
+			var cel2=newRow.insertCell(1);
+			var cel3=newRow.insertCell(2);
+			var cel4=newRow.insertCell(5);
+			var cel5=newRow.insertCell(4);
+
+			cel1.innerHTML=name;
+			cel2.innerHTML=period;
+			cel3.innerHTML=reading;
+			cel4.innerHTML=cons;
+			cel5.innerHTML=rate;
+		}
+
+	</script>
+</head>
+<body>
+
+	
+	Name:<input type="test" id="name" autocomplete="off"/><br><br>
+	Period:<input type="test" id="period" autocomplete="off"/><br><br>
+	Meter Reading:<input tpye="test" id="reading" autocomplete="off"/><br><br>
+	Consumption:<input type="test" id="cons" autocomplete="off"/><br><br>
+	Rate:<input type="test" id="rate" autocomplete="off"><br><br>
+	<button onclick="addRow()">ADD BILL</button><br><br>
+	
+	<table border="2" cellpadding="5px">
+<tr>
+	<th colspan="8"><b>Water Charge Bill</b></th>
+</tr>
+<tr>
+	<td>Name and Address</td>
+	<td> Period </td>
+	<td> Meter reading in kilolitres </td>
+	<td> Consumption of water in kilolitres </td>
+	<td> Rate 1 @ 270/- per month </td>
+	<td> Amount </td>
+	<td> Surcharge 15% </td>
+	<td><input type="button" value=" Total "></td>
+</tr>
+</table>
+	</body>
+</html>
